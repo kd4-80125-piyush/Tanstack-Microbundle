@@ -1,0 +1,43 @@
+{
+  "name": "my-bundles",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "source": "src/index.jsx",
+  "module": "dist/index.module.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "microbundle --jsx React.createElement",
+    "dev": "microbundle watch",
+    "postbuild": "xcopy /Y src\\Table.css dist\\"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "my-bundles": "file:",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
+    "react-router-dom": "^6.26.0",
+    "react-table": "^7.8.0",
+    "sweetalert2": "^11.12.4",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-react-jsx": "^7.16.0",
+    "@babel/preset-react": "^7.24.7",
+    "microbundle": "^0.15.1",
+    "rollup": "^4.20.0"
+  },
+  "microbundle": {
+    "format": "cjs,esm",
+    "tsconfig": "tsconfig.json",
+    "sourcemap": true,
+    "jsx": "react"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  }
+}
